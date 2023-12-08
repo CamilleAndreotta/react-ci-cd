@@ -36,7 +36,7 @@ jobs:
               uses: actions/upload-pages-artifact@v2
               with:
                 name: artifact
-                path: ./dist
+                path: ./vite-project/dist
 
     deploy:
         runs-on: ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
             name: github-pages
             url: ${{ steps.deployment.outputs.page_url }}
         steps:
-            - name: Configure Github Pages
+            - name: Setup Github Pages
               uses: action/configure-pages@v4
             - name: Deploy to GitHub Pages
               uses: actions/deploy-pages@v3
